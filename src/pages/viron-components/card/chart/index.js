@@ -88,6 +88,8 @@ export default function() {
         this.isLoading = false;
         if (err.status === 401) {
           this.error = i18n.get('pg.components.card.chart.error_401');
+        } else if (err.status === 403) {
+          this.error = i18n.get('pg.components.card.chart.error_403');
         } else {
           const api = this.opts.def.api;
           this.error = `[${api.method.toUpperCase()} ${api.path}]${i18n.get('pg.components.card.chart.error_network')}`;
